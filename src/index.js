@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import {Authentication, Auth0Strategy} from '@react-access-control/authentication';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Authentication>
+      <Auth0Strategy>
+        <App />
+      </Auth0Strategy>
+    </Authentication>
   </React.StrictMode>,
   document.getElementById('root')
 );

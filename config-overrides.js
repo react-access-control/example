@@ -9,6 +9,7 @@ module.exports = function override(config, env) {
   );
   config.resolve.alias = Object.assign(config.resolve.alias, {
     '@react-access-control/authentication': resolve('../authentication'),
+    react: path.resolve('./node_modules/react'),
     // etc...
   });
   return config;

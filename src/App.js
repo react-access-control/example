@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { ExampleComponent } from '@react-access-control/authentication';
+import {useAuthentication} from '@react-access-control/authentication';
+
 
 function App() {
+  const authentication = useAuthentication()
   return (
     <div className="App">
-      <ExampleComponent text="My Test" />
+      <button onClick={async () => await authentication.login()}>Login</button>
+      <button onClick={async () => await authentication.logout()}>Logout</button>
     </div>
   );
 }
